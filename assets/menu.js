@@ -1,6 +1,6 @@
 (function(){
   const script=document.currentScript || [...document.scripts].find(s=>/assets\/menu\.js(?:\?|$)/.test(s.src));
-  const ROOT=script ? new URL('../..',script.src).href : './';
+  const ROOT=script ? new URL('../',script.src).href : './';
   const u=p=>new URL(p,ROOT).href;
   const homeSvg='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>';
   const searchSvg='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>';
