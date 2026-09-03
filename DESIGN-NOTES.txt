@@ -1,0 +1,9 @@
+Serbia.RDM static reconstruction
+
+Central maintenance files:
+- assets/menu.js: desktop header/navigation, shared dark mobile drawer, footer
+- assets/site.css: global visual design and responsive behaviour
+
+Homepage icons are the original transparent files in images/cubicMenu/. Their purple/orange backgrounds are CSS, so they turn orange on hover.
+
+The supplied images folder has been restored in full.

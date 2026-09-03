@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Poverljivost | Serbia.RDM</title>
+<meta content="Vodič Upravljanje istraživačkim podacima pružiće vam potrebne informacije i savete za što efikasnije upravljanje istraživačkim podacima." name="description"/>
+<link href="../../assets/site.css" rel="stylesheet"/>
+<link href="../../images/rdm-favicon.png" rel="icon"/></head>
+<body data-route="/13-deljenje/25-personal-data/">
+<header id="site-header"></header>
+<main class="site-main">
+<article class="item item-page" itemscope="" itemtype="http://schema.org/Article">
+<meta content="sr-YU" itemprop="inLanguage">
+<div class="entry-header">
+<h2 itemprop="name">
+									Poverljivost							</h2>
+</div>
+<div itemprop="articleBody">
+<h3>Podaci o ličnosti</h3>
+<p>Svako prikupljanje ličnih podataka mora biti u skladu sa Zakonom o zaštiti podataka o ličnosti<a href="https://www.paragraf.rs/propisi/zakon_o_zastiti_podataka_o_licnosti.html" rel="noopener" target="_blank"> ZZPL</a>. Ovaj zakon je usklađen sa Opštom regulativom za zaštitu podataka o ličnosti Evropske unije, poznatijem kao <a href="https://gdpr-info.eu/">GDPR</a> (eng. <em>General Data Protection Regulation</em>).</p>
+<p>Koji su to lični podaci na koje treba obratiti pažnju? Prema Zakonu o zaštiti podataka o ličnosti to je “svaki podatak koji se odnosi na fizičko lice čiji je identitet određen ili odrediv, neposredno ili posredno, posebno na osnovu oznake identiteta, kao što je ime i identifikacioni broj, podataka o lokaciji, identifikatora u elektronskim komunikacionim mrežama ili jednog, odnosno više obeležja njegovog fizičkog, fiziološkog, genetskog, mentalnog, ekonomskog, kulturnog i društvenog identiteta” (ZZPL, čl. 4, t.1).</p>
+<p>Zakon predviđa da rukovalac podacima o ličnosti (tj. odgovorno lice zaduženo za prikupljanje tih podataka) obezbedi sve potrebne uslove u skladu sa zakonom kako bi se ovi podaci zaštitili od svakog neovlašćenog preuzimanja i korišćenja.</p>
+<h3>Anonimizacija</h3>
+<p>Podaci mogu da identifikuju određenu osobu na direktan i indirektan način.</p>
+<p>Direktni identifikatori na eksplicitan način otkrivaju identitet i to su prezime i ime, jedinstveni matični broj građana, broj pasoša ili lične karte, broj telefona.</p>
+<p>Indirektni identifikatori ne otkrivaju odmah identitet poput direktnih. To mogu biti podaci o nacionalnosti, veroispovesti, rasi, novčanoj zaradi, geografskoj lokaciji stanovanja, i sl. U kombinaciji sa drugim podacima mogu dovesti do sužavanja rezultata pretrage, čak i do potpune identifikacije pojedinca. (Primer: Neka se sprovodi upitnik o uslovima rada u inženjerskoj kompaniji koja ima relativno mali broj žena. Upitnik uključuje podatke o polu i godištu, a učesnici unose svoje slobodne komentare. Ako istraživači, publikuju podatak šta je na neko pitanje odgovorila osoba ženskog pola koja ima 30 godina, a poznato je da u kompaniji postoji samo jedna osoba koja je tih godina i ženskog pola, tada je osoba u potpunosti identifikovana i podaci nisu zaštićeni.)</p>
+<p>Anonimizacija je proces kojim se u nekom setu podataka uklanjaju ili menjaju oni podaci koji na bilo koji način mogu da identifikuju određenu osobu.</p>
+<p>Preporuke za anonimizaciju baza podataka:</p>
+<ul>
+<li>obezbedite da nema direktnih identifikatora</li>
+<li>uklonite sve nepotrebne indirektne podatke</li>
+<li>za varijable kod kojih je to moguće, a na osnovu kojih bi bilo moguće posredno identifikovati ispitanika, primenite agregaciju</li>
+<li>smanjite nivo preciznosti merenja: npr. uklonite datum rođenja i koristiti samo godinu, umesto naziva grada koristite odrednicu "grad" ili naziv zemlje</li>
+<li>ukoliko je na osnovu ekstremnih vrednosti (outlier) moguće indirektno identifikovati ispitanika, ograničite raspon vrednosti varijable kako bi sakrili vrednosti koje dramatično odstupaju.   </li>
+</ul>
+<p>Identifikatori se mogu sakriti ili ukloniti iz skupova podataka na više načina, a ovde su pokazani neki od najpopularnijih načina:</p>
+<ol>
+<li>potpuna anonimizacija - npr. brisanje telefonskog broja ( +381 11 123 456 → +381 ## ### ### )</li>
+<li>pseudonimizacija - npr. zamena imena drugim, lažnim imenom (Petar Jovanović → Đorđe Jović)</li>
+<li>korišćenje kodnih oznaka - npr. (Marija Jovanović → [ž/32/SRB]) ili (Novi Sad → [grad])</li>
+<li>sažimanje vrednosti - kao npr. u tabeli</li>
+</ol>
+<table border="2" cellpadding="2" cellspacing="0" style="width: 606px; border-color: #c6ad8f; height: 123px;"><caption><span style="font-family: verdana, geneva; font-size: 12pt;"></span></caption>
+<tbody>
+<tr>
+<td>ime i prezime</td>
+<td>godine</td>
+<td> →</td>
+<td>ime i prezime</td>
+<td>godine</td>
+</tr>
+<tr>
+<td>Pacijent 1</td>
+<td> 64</td>
+<td> →</td>
+<td>Pacijent 1</td>
+<td> 64-68</td>
+</tr>
+<tr>
+<td>Pacijent 2</td>
+<td> 72</td>
+<td> →</td>
+<td>Pacijent 2</td>
+<td> 70-75</td>
+</tr>
+<tr>
+<td>Pacijent 3</td>
+<td> 68</td>
+<td> → </td>
+<td>Pacijent 3</td>
+<td> 64-68</td>
+</tr>
+<tr>
+<td>Pacijent 4</td>
+<td> 75</td>
+<td> → </td>
+<td>Pacijent 4</td>
+<td> 70-75</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva; font-size: 12pt;"><span style="font-weight: 400;"><br/></span></span>Ovo su samo neke tehnike anonimizacije podataka.</p>
+<p>Uvek je dobro unapred se dogovoriti sa ostalim saradnicima o načinima anonimizacije koji će se koristiti u radu. Takođe, korisno je i konsultovati se sa pravnom službom, etičkim odborom za odorenje istraživanja (Institutional Review Board - IRB) i stručnjakom za statistiku.</p>
+<p>Ukoliko u istraživanju podatke prikupljate od ispitanika i planirate da primarne podatke deponujete u neki od repozitorijuma, potrebno je da to ispitanicima predočite u formularu saglasnosti za učešće u istraživanju, kao i da obavestite IRB od kojeg tražite odobrenje da će podaci biti pohranjeni u repozitorijum.</p>
+<p>Ukoliko u istraživanju ne tražite od ispitanika da daju neki od podataka na osnovu kojih je ispitanika moguće identifikovati (npr. podaci na osnovu kojih je moguća direktna identifikacija ili nema kombinacije indirektnih ili kvazi-identifikatora na osnovu koji se ispitanik može identifikovati) podaci se smatraju anonimizovanim.<br/>Takođe, ako prilikom sprovođenja istraživanja vodite evidenciju o tome ko je učestvovao u istraživanju (npr. evidencija o učešću je potpuno odvojena od baza podataka i u evidenciji nema podataka na osnovu kojih bi ispitanik mogao da u bazi bude identifikovan), ali na način da nije moguće u bazama podataka identifikovati pojedinca, podaci se smatraju anonimizovanim. <br/>Ukoliko u bazi podataka ispitanike vodite pod šifrom (koja nije sastavljena od indirektnih ili kvazi identifikatora), a u odvojenom dokumentu imate pored podataka na osnovu kojih bi ispitanik mogao da bude identifikovan i šifru, podaci se ne mogu smatrati anonimizovanim. </p>
+<p>Za pseudoanonimizaciju i anonimizaciju podataka, postoje i softverska rešenja poput programa <a href="https://amnesia.openaire.eu/">Amnesia</a> (Institute for the Management of Information Systems, Research Center ”Athena”, Marousi, Greece) koji je razvijen uz podršku EU projekta <a href="https://www.openaire.eu/">OpenAIRE</a> u okviru kog je organizovan i vebinar na temu OpenAIRE Legal Policy Webinar čiji je <a href="https://www.youtube.com/watch?v=JtFNols8tB0" rel="noopener" target="_blank" title="OpenAIRE Legal Policy Webinar @YouTube">snimak</a> dostupan na YouTube-u:</p>
+<p> </p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="410" src="https://www.youtube.com/embed/JtFNols8tB0"></iframe></p>
+<p>Ukoliko postoji bilo kakva nedoumica oko anonimizacije i pseudo-anonimizacije, preporuka je da se umesto podataka podele metapodaci, a da se podaci dele na lični zahtev.</p>
+<p>Dokument na srpskom jeziku o Amnesia softveru je dostupan <a href="../../images/Izveštaj_o_aplikaciji_Amnesia_finalan.pdf">ovde</a>, a prevod Amnesia uputstava sa <a href="https://www.openaire.eu/">OpenAIRE</a> sajta<a href="https://amnesia.openaire.eu/Scenarios/AmnesiaTutorialKAnon.pdf"><em> A complete k-anonymity scenario</em></a> i <a href="https://amnesia.openaire.eu/Scenarios/AmnesiaKMAnonymityTutorial.pdf"><em>k<sup>m</sup>-anonymity</em></a><span dir="ltr"> su dostupna na srpskom jeziku pod nazivima <em><a href="../../images/Amnesia_uputstvo_I_finalno.pdf">Kompletan scenario k – anonimnost</a></em> i <em><a href="../../images/Amnesia_uputstvo_II_finalno.pdf">k<sup>m</sup> – anonimnost</a></em>.</span></p>
+<p><span style="font-family: verdana, geneva; font-size: 12pt;"></span><br/> </p>
+<p style="text-align: center;"><a href="../../sharing-publishing/data-rights/" rel="next">Sledeće - Autorska prava</a></p> </div>
+</meta></article>
+</main>
+<footer id="site-footer"></footer>
+<script src="../../assets/menu.js"></script><script src="../../assets/site.js"></script>
+</body>
+</html>

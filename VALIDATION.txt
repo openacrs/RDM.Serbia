@@ -1,0 +1,7 @@
+Validation
+HTML pages checked: 45
+Files restored under images/: 125
+Image files under images/: 106
+Local references checked: 375
+Local image references checked: 36
+Broken local references: 0
