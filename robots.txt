@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oscs.open.ac.rs/sitemap.xml
+Sitemap: https://rdm.open.ac.rs/sitemap.xml
